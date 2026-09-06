@@ -63,16 +63,18 @@ private:
     string rammem;
     string gpu;
     string vpu;
+    string ssd;
     int price;
     
 public:
-    void Init(string cp, string mb, string ram, string gp, string vp, int pr)
+    void Init(string cp, string mb, string ram, string gp, string vp, string s, int pr)
     {
         cpu = cp;
         motherboard = mb;
         rammem = ram;
         gpu = gp;
         vpu = vp;
+        ssd = s;
         price = pr;
     }
     
@@ -83,6 +85,7 @@ public:
         cout << "Ram memory is: " << rammem << endl;
         cout << "Video card is: " << gpu << endl;
         cout << "Volume card is: " << vpu << endl;
+        cout << "SSD is: " << ssd << endl;
         cout << "Price of notebook is: " << price << endl;
     }
     
@@ -136,6 +139,16 @@ public:
         return vpu;
     }
     
+    void SetSsd(string s)
+    {
+        ssd = s;
+    }
+    
+    string GetSsd()
+    {
+        return ssd;
+    }
+    
     void SetPrice(int pr)
     {
         price = pr;
@@ -159,7 +172,7 @@ int main()
     
     cout << endl;
     
-    note1.Init("Intel", "BM-5460", "Hyperx", "Asus", "Fio", 30000);
+    note1.Init("Intel", "BM-5460", "Hyperx", "Asus", "Fio", "Kingston", 30000);
     note1.PrintNote();
     note1.SetVideo("MSI");
     cout << endl;
